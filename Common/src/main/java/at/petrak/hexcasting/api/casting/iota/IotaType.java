@@ -44,7 +44,7 @@ public abstract class IotaType<T extends Iota> {
      */
     public abstract int color();
 
-    public int color(@Nullable CompoundTag tag){
+    public int color(CompoundTag tag){
         return color();
     }
 
