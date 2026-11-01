@@ -13,6 +13,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.FormattedCharSequence;
 
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Objects;
@@ -42,6 +43,10 @@ public abstract class IotaType<T extends Iota> {
      * Get the color associated with this datum type.
      */
     public abstract int color();
+
+    public int color(@Nullable CompoundTag tag){
+        return color();
+    }
 
     /**
      * Get a display component that's the name of this iota type.
@@ -187,6 +192,6 @@ public abstract class IotaType<T extends Iota> {
         if (type == null) {
             return HexUtils.ERROR_COLOR;
         }
-        return type.color();
+        return type.color(tag);
     }
 }
